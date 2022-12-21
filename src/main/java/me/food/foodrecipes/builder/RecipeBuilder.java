@@ -126,11 +126,4 @@ public class RecipeBuilder {
     public static Recipe buildRecipe(String id, String name, int cookingMinutes, String... ingredients) {
         return new RecipeBuilder().withId(id).withName(name).withCookingMinutes(cookingMinutes).addIngredients(ingredients).build();
     }
-    ///public static List<Recipe> getRecipes() {
-    //return Collections.<Recipe>emptyList();
-    //return getOneRecipe();
-    //return getThreeRecipes();
-    //return getTenRecipes();
-    //return getTwelveRecipes();
-    //}
 }

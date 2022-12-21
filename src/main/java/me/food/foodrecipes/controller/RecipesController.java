@@ -5,15 +5,11 @@ import me.food.foodrecipes.service.RecipesService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import static me.food.foodrecipes.util.RecipesConstants.ITEMS_PER_PAGE;
 
-@Controller
+@RestController
 @RequestMapping("/recipes")
 public class RecipesController {
 
@@ -26,7 +22,7 @@ public class RecipesController {
         this.recipesService = recipesService;
     }
 
-    @RequestMapping(method = RequestMethod.GET)
+    @GetMapping("/pageNo")
     public
     @ResponseBody
     Recipes list(@RequestParam(value = "pageNo", required = false) String pageNo) {
